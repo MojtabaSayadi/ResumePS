@@ -1,7 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using ResumePS.Data.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region Add Db Context
+builder.Services.AddDbContext<ResumePSContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Myconnection"));
+});
+#endregion
+//builder.Services.RegisterServices();
+//builder.Services.AddScoped<IUserService, UserService>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+
 
 var app = builder.Build();
 
