@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using ResumePS.Core.Services.Implementations;
+using ResumePS.Core.Services.Interfaces;
 using ResumePS.Data.Context;
+using ResumePS.Data.Repositories;
+using ResumePS.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +17,8 @@ builder.Services.AddDbContext<ResumePSContext>(options =>
 });
 #endregion
 //builder.Services.RegisterServices();
-//builder.Services.AddScoped<IUserService, UserService>();
-//builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 
