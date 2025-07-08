@@ -4,6 +4,7 @@ using ResumePS.Core.Services.Interfaces;
 using ResumePS.Data.Context;
 using ResumePS.Data.Repositories;
 using ResumePS.Domain.Interfaces;
+using ResumePS.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,9 @@ builder.Services.AddDbContext<ResumePSContext>(options =>
 //builder.Services.RegisterServices();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IWebMainInfoService, WebMainInfoService>();
+builder.Services.AddScoped<IWebMainInfoRepository, WebMainInfoRepository>();
 
 
 

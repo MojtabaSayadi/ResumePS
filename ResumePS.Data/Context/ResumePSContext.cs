@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ResumePS.Domain.Models.Auth;
+using ResumePS.Domain.Models.Web;
 
 namespace ResumePS.Data.Context
 {
@@ -15,5 +16,6 @@ namespace ResumePS.Data.Context
 
         }
         public DbSet<User> users { get; set; }
+        public DbSet<WebMainInfo> webMainInfo { get; set; }
     }
 }
