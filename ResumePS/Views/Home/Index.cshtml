@@ -1,8 +1,633 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@model WebContactUsViewModel
+@{
+	ViewData["Title"] = "Home Page";
+
+	MyInfoOnWebViewModel myinfo = new MyInfoOnWebViewModel();
+	// List<WebSocial> socials = new List<WebSocial>();
+	// List<WebSkills> skills = new List<WebSkills>();
+	// List<WebServices> services = new List<WebServices>();
+	// List<WebDocViewModel> docTypes = new List<WebDocViewModel>();
+	// List<WebDocDetailsViewModel> docD = new List<WebDocDetailsViewModel>();
+	// List<WebProjects> projects = new List<WebProjects>();
+
+	// List<WebBlogs> blogs = new List<WebBlogs>();
+
+	// if (ViewBag.Blogs != null)
+	// {
+	// 	blogs = ViewBag.Blogs as List<WebBlogs>;
+	// }
+
+	// if (ViewBag.MyProjects != null)
+	// {
+	// 	projects = ViewBag.MyProjects as List<WebProjects>;
+	// }
+
+	// if (ViewBag.WebDoc != null)
+	// {
+	// 	docTypes = ViewBag.WebDoc as List<WebDocViewModel>;
+	// }
+	// if (ViewBag.DocD != null)
+	// {
+	// 	docD = ViewBag.DocD as List<WebDocDetailsViewModel>;
+	// }
+
+
+	if (ViewBag.WebInfo != null)
+	{
+		myinfo = ViewBag.WebInfo as MyInfoOnWebViewModel;
+	}
+	// if (ViewBag.Social != null)
+	// {
+	// 	socials = ViewBag.Social as List<WebSocial>;
+
+	// }
+	// if (ViewBag.Skills != null)
+	// {
+	// 	skills = ViewBag.Skills as List<WebSkills>;
+	// }
+	// if (ViewBag.Services != null)
+	// {
+
+	// 	services = ViewBag.Services as List<WebServices>;
+	// }
+//	GoogleRecapchaForViewViewModel tmp = ViewData["SiteKey"] as GoogleRecapchaForViewViewModel;
+
+
+}
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+	<input type="hidden" id="alert" value="@ViewBag.Message" />
+
+}
+@if (!string.IsNullOrEmpty(ViewBag.errmessage))
+{
+	<input type="hidden" id="erralert" value="@ViewBag.errmessage" />
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome Parisa</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="alx-scroll-wrap">
+	<!--Content STARTs-->
+	<div id="alx-preloader">
+		<div class="cssload-thecube">
+			<div class="cssload-cube cssload-c1"></div>
+			<div class="cssload-cube cssload-c2"></div>
+			<div class="cssload-cube cssload-c4"></div>
+			<div class="cssload-cube cssload-c3"></div>
+		</div>
+	</div>
+	<header>
+		<div class="alx-logo"><a href="#page1"><img class="alx-logo__dark" src="/TemplateFile/images/logo.svg" alt="logo"><img class="alx-logo__white" src="~/templatefile/images/logo-white.svg" alt="logo"></a></div>
+		<div class="alx-right-wrap">
+			<div class="alx-social-links">
+				@* @if (socials.Count() > 0)
+				{
+					<ul>
+						@foreach (var item in socials)
+						{
+							<li><a href="@item.Url"><i class="@item.Image"></i></a></li>
+						}
+
+
+					</ul>
+				} *@
+
+			</div><a class="alx-burger" href="#"><span></span></a>
+		</div>
+	</header>
+	<div id="alx-pagepiling">
+		<section class="alx-vertical-middle pp-scrollable alx-bg-img" data-image="/TemplateFile/images/bgr.jpg" data-tooltipsection="First screen">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="alx-heading alx-text-center">
+							<h1 class="alx-heading__title">@myinfo.FullName</h1>
+							<div class="alx-heading__pretitle"><i class="fa fa-camera-retro"></i>@myinfo.Major</div>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+							<div class="alx-heading__description">با تجربه گسترده در مدیریت بانک‌های اطلاعاتی  اوراکل، توانایی در نصب، پیکربندی، و نگهداری پایگاه‌های داده اوراکل را دارم. </div>
+						</div>
+						<div class="alx-btns-section alx-text-center"><a class="alx-btn" href="#page6">نمونه کارهای من</a></div>
+					</div>
+					<div class="col-lg-6 offset-lg-1"></div>
+				</div>
+			</div>
+			<canvas class="alx-canvas" id="pretty-bg"></canvas>
+		</section>
+		<section class="alx-vertical-middle alx-dark-section pp-scrollable alx-bg-img" data-image="/TemplateFile/images/bgd1.jpg">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 order-lg-12">
+						<div class="alx-person-image alx-dots-style">
+							<img class="img-responsive alx-tilt" src="image/@myinfo.ImageName" alt="">
+							@*	<h3 class="alx-person-image__title alx-text-center">@ViewBag.exp_year سال تجربه کاری</h3> *@
+						</div>
+					</div>
+					<div class="col-lg-6 alx-style" data-style="margin: 50px 0">
+						<div class="alx-heading">
+							<h2 class="alx-heading__title">درباره من</h2>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+							<div class="alx-heading__description">@myinfo.AboutMe </div>
+							<div class="alx-heading__pretitle alx-style" data-style="margin-top: 20px"></div>
+						</div><a class="alx-btn alx-btn-primary" download href="/resume/@myinfo.ResumeImge">دانلود رزومه  </a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="alx-vertical-middle pp-scrollable alx-bg-img" data-image="/TemplateFile/images/bg2.jpg" data-tooltipsection="Second screen">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="alx-heading">
+
+						<h2 class="alx-heading__title"> خدمات من</h2>
+						<div class="alx-heading__zigzag">
+							<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+								<g>
+									<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+								</g>
+							</svg>
+						</div>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="alx-services alx-dots-style" data-interval="7000">
+							@* @if (services.Count() > 0)
+							{
+
+								<div class="alx-services__container">
+									@foreach (var item in services)
+									{
+
+										<div class="alx-services__item">
+											<div class="alx-services__item__wrap">
+
+
+												<div class="alx-services__item__main">
+													<i class="@item.ClassName"></i>
+													<h4 class="alx-services__item__title">@item.Title</h4>
+												</div>
+												<div class="alx-services__item__description">@item.Description</div>
+												<div class="alx-services__item__opacityicon"><i class="@item.ClassName"></i></div>
+
+
+
+											</div>
+										</div>
+									}
+
+
+								</div>
+							} *@
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="alx-vertical-middle pp-scrollable alx-dark-section alx-bg-img" data-image="/TemplateFile/images/bgd3.jpg">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-5 alx-style" data-style="margin: 50px 0">
+						<div class="alx-heading">
+							<h2 class="alx-heading__title">مهارت های من</h2>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+
+							@* <div class="alx-heading__description">
+								من کارم را خوب و به موقع انجام می دهم - این اصل غیرقابل انکار، مهمتر از آن است که حتی نمی تواند پول باشد.<br>
+								<strong>فقط نمونه کارها من را بررسی کنید و بیایید با هم کار کنیم!</strong>
+							</div> *@
+						</div>
+						<div class="alx-skills-list">
+							@* @if (skills.Count() > 0) 
+							{
+
+								@foreach (var item in skills.Take(4))
+								{
+									<div class="alx-skills">
+										<div class="alx-skills__header">
+											<div class="alx-skills__title">@item.Title</div>
+											<div class="alx-skills__count">@item.Percent%</div>
+										</div>
+										<div class="alx-skills__body">
+											<div class="alx-skills__bar" data-skills="@item.Percent%"></div>
+										</div>
+									</div>
+								}
+
+							}*@
+						</div>
+					</div>
+					<div class="col-lg-5 offset-lg-2 align-self-center">
+
+						@* @if (skills.Count() > 0)
+						{
+
+							@foreach (var item in skills.Skip(5).Take(5))
+							{
+								<div class="alx-skills">
+									<div class="alx-skills__header">
+										<div class="alx-skills__title">@item.Title</div>
+										<div class="alx-skills__count">@item.Percent%</div>
+									</div>
+									<div class="alx-skills__body">
+										<div class="alx-skills__bar" data-skills="@item.Percent%"></div>
+									</div>
+								</div>
+							}
+
+						} *@
+
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="alx-vertical-middle pp-scrollable alx-bg-img" data-image="/TemplateFile/images/bgl3.jpg">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-5">
+						<div class="alx-heading">
+							<div class="alx-heading__pretitle"><i class="fa fa-money"></i>نرخ بازای ه3 ساعت فقط 25 هزار تومان</div>
+							<h2 class="alx-heading__title">قیمت</h2>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+						</div>
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی وب سایت</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی وب سایت شرکتی</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی وب سایت خدماتی</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 offset-lg-2 align-self-end">
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی وب سایت فروشگاهی</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی وب سایت های شخصی</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی صفحه اصلی</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+						<div class="alx-price">
+							<div class="alx-price__title">طراحی صفحات داخلی</div>
+							<div class="alx-price__price">
+								<span>از</span>
+								<p>900/000 ت</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="alx-vertical-middle pp-scrollable alx-dark-section alx-bg-img" data-image="/TemplateFile/images/bgd3.jpg">
+			<div class="container">
+				<div class="col-lg-12">
+					@* @if (docTypes.Count() > 0)
+					{
+						<ul class="alx-portfolio-control alx-portfolio__nav alx-text-left">
+							@foreach (var item in docTypes)
+							{
+								if (item.Title_En.Equals("All"))
+								{
+									<li class="alx-active" data-filter="*">@item.Title</li>
+
+								}
+								else
+								{
+									<li data-filter=".@item.Title_En">@item.Title</li>
+
+								}
+							}
+						</ul> *@
+					}
+
+
+
+				</div>
+				<div class="alx-portfolio-items alx-layout-isotope alx-isotope-gap" data-grid="4">
+					@* @foreach (var item in docD)
+					{
+						<div class="alx-isotope-item @item.Title_En">
+							<div class="alx-portfolio-item alx-portfolio-item__style1">
+								<a class="alx-img-gallery" href="~/image/DocumentImage/@item.ImageName"></a>
+								<div class="alx-portfolio-item-image">
+									<div class="alx-bg-img" data-image="/image/DocumentImage/Thumb/@item.ImageName"></div>
+								</div>
+								<div class="alx-portfolio-item-details">
+									<h4>@item.Title</h4>
+									<p>خلاقانه</p>
+								</div>
+							</div>
+						</div>
+					} *@
+
+
+				</div>
+			</div>
+		</section>
+		<section class="alx-vertical-middle pp-scrollable alx-bg-img" data-image="/TemplateFile/images/bg2.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="alx-heading">
+							<h2 class="alx-heading__title"> پروژه های من </h2>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="alx-testimonials">
+						<div class="alx-testimonials__slides">
+						@* 	@foreach (var item in projects)
+							{
+
+								<div class="alx-testimonials__item">
+									<img src="~/image/project_logo/@item.ImageFile" alt="">
+									<div class="alx-testimonials__content">
+										<div class="alx-testimonials__item__review"></div>
+										@if (string.IsNullOrEmpty(item.Url))
+										{
+											<div class="alx-testimonials__item__name">@item.Title</div>
+										}
+										else
+										{
+											<a href="@item.Url" target="_blank">
+												<div class="alx-testimonials__item__name">@item.Title</div>
+											</a>
+										}
+
+										<div class="alx-testimonials__item__text">@item.Description</div>
+									</div>
+								</div>
+							} *@
+
+
+						</div>
+
+						<div class="alx-slider__nav">
+							<div class="alx-slider__nav__prev">
+								<div class="alx-slider__nav__next__icon"><i class="fa fa-angle-double-left"></i></div>
+							</div>
+							<div class="alx-slider__nav__dots"></div>
+							<div class="alx-slider__nav__next">
+								<div class="alx-slider__nav__next__icon"><i class="fa fa-angle-double-right"></i></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+		</section>
+		@* blog *@
+		<section class="alx-vertical-middle alx-dark-section pp-scrollable alx-bg-img" data-image="TemplateFile/images/bgd5.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="alx-heading" style="margin-bottom:0px!important">
+							<h2 class="alx-heading__title">آخرین نوشته های من</h2>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+						</div>
+					</div>
+					@* @if (blogs.Count() > 0)
+					{
+						<div class="alx-testimonials_my">
+							<div class="alx-testimonials__slides">
+								 @foreach (var item in blogs)
+								{
+									<a href="@item.Url" target="_blank">
+										<div class="alx-testimonials__item_my">
+											<img src="/image/Blog/@item.ImageFile" alt="">
+											<div class="alx-testimonials__content_my">
+												<div class="alx-testimonials__item_my__review">
+												</div>
+												<div class="alx-testimonials__item_my__name">
+													@(item.Title.Length > 30
+													 item.Title.Substring(0, 25).TrimEnd() + "…"
+													: item.Title)
+
+												</div>
+												<div class="alx-testimonials__item_my__text" style="direction:rtl">
+
+													@(item.Description.Length > 150
+													? item.Description.Substring(0, 150).TrimEnd() + "…"
+													: item.Description)
+
+												</div>
+											</div>
+										</div>
+									</a>
+								} 
+
+							</div>
+							<div class="alx-slider__nav_my">
+								<div class="alx-slider__nav_my__prev">
+									<div class="alx-slider__nav_my__next__icon"><i class="fa fa-angle-double-left"></i></div>
+								</div>
+								<div class="alx-slider__nav_my__dots"></div>
+								<div class="alx-slider__nav_my__next">
+									<div class="alx-slider__nav_my__next__icon"><i class="fa fa-angle-double-right"></i></div>
+								</div>
+							</div>
+						</div>
+					}*@ 
+
+				</div>
+			</div>
+
+		</section>
+
+
+		@* contact us *@
+		<section class="alx-vertical-middle pp-scrollable alx-bg-img" data-image="/TemplateFile/images/bgl5.jpg">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-5">
+						<div class="alx-heading">
+							<h2 class="alx-heading__title">سلام برسان</h2>
+							<div class="alx-heading__zigzag">
+								<svg x="0px" y="0px" viewBox="0 0 100 19.5">
+									<g>
+										<polygon points="79.3,18 69.6,8.3 60,18 50.3,8.3 40.6,18 31,8.3 21.3,18 11.7,8.3 3.4,16.5 0.6,13.7 11.7,2.7 21.3,12.3 31,2.7 								40.6,12.3 50.3,2.7 60,12.3 69.6,2.7 79.3,12.3 88.9,2.7 100,13.6 97.2,16.4 89,8.3 "></polygon>
+									</g>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="alx-icon">
+							<div class="alx-icon__icon"><span><i class="fa fa-phone"></i></span></div>
+							<div class="alx-icon__text">
+								<h5>تماس با من در هر زمان</h5>
+								<p>@myinfo.Phone_no</p>
+							</div>
+						</div>
+						<div class="alx-icon">
+							<div class="alx-icon__icon"><span><i class="fa fa-envelope"></i></span></div>
+							<div class="alx-icon__text">
+								<h5>ایمیل من</h5><a href="mojtabasayadi1349@gmail.com">@myinfo.Email</a>
+							</div>
+						</div>
+						<div class="alx-icon">
+							<div class="alx-icon__icon"><span><i class="fa fa-home"></i></span></div>
+							<div class="alx-icon__text">
+								<h5>آدرس</h5>
+								<p>@myinfo.Address</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<form class="alx-contact-form" asp-action="Index" asp-controller="Home" method="post">
+							@* <partial name="_CaptchaInput" /> *@
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="alx-input-group">
+										<input asp-for=Fullname placeholder="نام و نام خانوادگی شما *"><i class="fa fa-user-o"></i>
+									</div>
+									<div>
+										<span asp-validation-for="Fullname" style="color:red"></span>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="alx-input-group">
+										<input asp-for=PhoneNumber placeholder="شماره تماس شما *"><i class="fa fa-at"></i>
+										<div>
+											<span asp-validation-for="PhoneNumber" style="color:red"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="alx-input-group">
+										<textarea asp-for="Message" rows="6" required placeholder="پیغام *"></textarea><i class="fa fa-commenting-o"></i>
+									</div>
+									<div>
+										<span asp-validation-for="Message" style="color:red"></span>
+									</div>
+
+
+									<div class="alx-success-msg hide">
+										<p>پیغام با موفقیت ارسال شد</p>
+									</div>
+									<input class="alx-btn" type="submit" value="ارسال پیغام">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="alx-lang-change">
+		<ul>
+			<li class="current-lang"><a href="#">فارسی</a></li>
+			<li><a href="#">EN</a></li>
+			<li><a href="#">Rus</a></li>
+		</ul>
+	</div>
+	<div class="alx-copyright">
+		<p><span>©</span>Gnusmas 2019</p>
+	</div>
 </div>
+
+@* @section script {
+	<script>
+		window.onload=function(){
+
+
+			 const hiddenInput = document.getElementById('alert');
+			 const hiddenInputerr = document.getElementById('erralert');
+
+		 if (hiddenInputerr && hiddenInputerr.value.trim() !== '') {
+
+				Swal.fire({
+			icon: 'error',
+			title: 'خطا',
+			text: $("#erralert").val(),
+			customClass: {
+				confirmButton: 'btn btn-error'
+			},
+			confirmButtonText: 'باشه'
+		});
+		 }
+
+
+
+
+			 if(hiddenInput && hiddenInput.value.trim() !== ''){
+			 Swal.fire({
+			icon: 'success',
+			title: 'تبریک',
+			text: $("#alert").val(),
+			customClass: {
+				confirmButton: 'btn btn-success'
+			},
+			confirmButtonText: 'باشه'
+		});
+			 }
+
+		}();
+	// // </script> *@
+
+	 @* <partial name="_CaptchaScript" model="@tmp" /> *@
+}

@@ -17,14 +17,16 @@ builder.Services.AddDbContext<ResumePSContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Myconnection"));
 });
 #endregion
-//builder.Services.RegisterServices();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.RegisterServices();
+//builder.Services.AddScoped<IUserService, UserService>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-builder.Services.AddScoped<IWebMainInfoService, WebMainInfoService>();
-builder.Services.AddScoped<IWebMainInfoRepository, WebMainInfoRepository>();
+//builder.Services.AddScoped<IWebMainInfoService, WebMainInfoService>();
+//builder.Services.AddScoped<IWebMainInfoRepository, WebMainInfoRepository>();
 
 
+//builder.Services.AddScoped<IWebContactUsService, WebContactUsService>();
+//builder.Services.AddScoped<IWebContactUsRepository, WebContactUsRepository>();
 
 var app = builder.Build();
 
