@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using ResumePS.Domain.Models.Web;
 
-
 namespace ResumePS.Domain.Interfaces
 {
-    public interface IWebSocialRepository
+    public interface IWebProjectsRepository
+
     {
-        WebSocial GetById(int id);// find
+        WebProjects GetById(int id);// find
         bool IsExist(int Id);
-        List<WebSocial> GetAll();// select *
-        void Add(WebSocial webSocial);// insert
-        void Update(WebSocial webSocial);// update
+        List<WebProjects> GetAll();// select *
+        void Add(WebProjects webProjects);// insert
+        void Update(WebProjects webProjects);// update
         void Delete(int id);// delete
-        void Delete(WebSocial webSocial);
+        void Delete(WebProjects webProjects);
         void Save(); // commit
+
     }
 }

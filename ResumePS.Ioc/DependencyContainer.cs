@@ -23,11 +23,11 @@ namespace ResumePS.Ioc
             service.AddScoped<IWebMainInfoRepository, WebMainInfoRepository>();
             service.AddScoped<IWebMainInfoService, WebMainInfoService>();
 
-            //service.AddScoped<IWebSocialRepository, WebSocialRepository>();
-            //service.AddScoped<IWebSocialService, WebSocialService>();
+            service.AddScoped<IWebSocialRepository, WebSocialRepository>();
+            service.AddScoped<IWebSocialService, WebSocialService>();
 
-            //service.AddScoped<IWebSkillsRepository, WebSkillsRepository>();
-            //service.AddScoped<IWebSkillsService, WebSkillsService>();
+            service.AddScoped<IWebSkillsRepository, WebSkillsRepository>();
+            service.AddScoped<IWebSkillsService, WebSkillsService>();
 
             //service.AddScoped<IWebDocTypeRepository, WebDocTypeRepository>();
             //service.AddScoped<IWebDocTypeService, WebDocTypeService>();
@@ -36,14 +36,14 @@ namespace ResumePS.Ioc
             //service.AddScoped<IWebDocDetailsService, WebDocDetailsService>();
 
 
-            //service.AddScoped<IWebServicesRepository, WebServicesRepository>();
-            //service.AddScoped<IWebServicesService, WebServicesService>();
+            service.AddScoped<IWebServicesRepository, WebServicesRepository>();
+            service.AddScoped<IWebServicesService, WebServicesService>();
 
             //service.AddScoped<IWebProjectsRepository, WebProjectsRepository>();
             //service.AddScoped<IWebProjectsService, WebProjectsService>();
 
-            //service.AddScoped<IWebBlogsRepository, WebBlogsRepository>();
-            //service.AddScoped<IWebBlogsService, WebBlogsService>();
+            service.AddScoped<IWebBlogsRepository, WebBlogsRepository>();
+            service.AddScoped<IWebBlogsService, WebBlogsService>();
 
             service.AddScoped<IWebContactUsRepository, WebContactUsRepository>();
             service.AddScoped<IWebContactUsService, WebContactUsService>();

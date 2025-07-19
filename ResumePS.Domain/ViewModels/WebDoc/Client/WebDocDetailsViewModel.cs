@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResumePS.Domain.Models.Web
+namespace ResumePS.Domain.ViewModels.WebDoc.Client
 {
-    public class WebServices
+    public class WebDocDetailsViewModel
     {
-        [Key]
-        public int Id { get; set; }
+        public string Title_En { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string ClassName {  get; set; } 
+        public string ImageName { get; set; }
     }
 }

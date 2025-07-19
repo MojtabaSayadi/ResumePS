@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Resume2.Domain.Models.Web
+namespace ResumePS.Domain.Models.Web
 {
     public class WebDocType
     {

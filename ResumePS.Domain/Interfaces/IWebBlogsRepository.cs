@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Resume2.Domain.Models.Web;
 using ResumePS.Domain.Models.Web;
 
 namespace ResumePS.Domain.Interfaces
@@ -18,6 +17,5 @@ namespace ResumePS.Domain.Interfaces
         void Delete(int id);// delete
         void Delete(WebBlogs webBlogs);
         void Save(); // commit
-
     }
 }

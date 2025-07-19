@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Resume2.Domain.Models.Web;
+
 using ResumePS.Domain.Models.Auth;
 using ResumePS.Domain.Models.Web;
 
