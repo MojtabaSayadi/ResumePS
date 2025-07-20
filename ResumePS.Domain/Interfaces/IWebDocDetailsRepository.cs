@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ResumePS.Domain.Models.Web;
 
-namespace ResumePS.Core.Services.Interfaces
+namespace ResumePS.Domain.Interfaces
 {
     public interface IWebDocDetailsRepository
     {

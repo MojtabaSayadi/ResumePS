@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ResumePS.Core.Services.Interfaces;
 using ResumePS.Data.Context;
+using ResumePS.Domain.Interfaces;
 using ResumePS.Domain.Models.Web;
 
 namespace ResumePS.Data.Repositories

@@ -1,57 +1,58 @@
-﻿
+﻿@using ResumePS.Domain.ViewModels.WebDoc.Client
+
 @model WebContactUsViewModel
 @{
 	ViewData["Title"] = "Home Page";
 
 	MyInfoOnWebViewModel myinfo = new MyInfoOnWebViewModel();
-	// List<WebSocial> socials = new List<WebSocial>();
-	// List<WebSkills> skills = new List<WebSkills>();
-	// List<WebServices> services = new List<WebServices>();
-	// List<WebDocViewModel> docTypes = new List<WebDocViewModel>();
-	// List<WebDocDetailsViewModel> docD = new List<WebDocDetailsViewModel>();
-	// List<WebProjects> projects = new List<WebProjects>();
+	List<WebSocial> socials = new List<WebSocial>();
+	List<WebSkills> skills = new List<WebSkills>();
+	List<WebServices> services = new List<WebServices>();
+	List<WebDocViewModel> docTypes = new List<WebDocViewModel>();
+	List<WebDocDetailsViewModel> docD = new List<WebDocDetailsViewModel>();
+	List<WebProjects> projects = new List<WebProjects>();
 
-	// List<WebBlogs> blogs = new List<WebBlogs>();
+	List<WebBlogs> blogs = new List<WebBlogs>();
 
-	// if (ViewBag.Blogs != null)
-	// {
-	// 	blogs = ViewBag.Blogs as List<WebBlogs>;
-	// }
+	if (ViewBag.Blogs != null)
+	{
+		blogs = ViewBag.Blogs as List<WebBlogs>;
+	}
 
-	// if (ViewBag.MyProjects != null)
-	// {
-	// 	projects = ViewBag.MyProjects as List<WebProjects>;
-	// }
+	if (ViewBag.MyProjects != null)
+	{
+		projects = ViewBag.MyProjects as List<WebProjects>;
+	}
 
-	// if (ViewBag.WebDoc != null)
-	// {
-	// 	docTypes = ViewBag.WebDoc as List<WebDocViewModel>;
-	// }
-	// if (ViewBag.DocD != null)
-	// {
-	// 	docD = ViewBag.DocD as List<WebDocDetailsViewModel>;
-	// }
+	if (ViewBag.WebDoc != null)
+	{
+		docTypes = ViewBag.WebDoc as List<WebDocViewModel>;
+	}
+	if (ViewBag.DocD != null)
+	{
+		docD = ViewBag.DocD as List<WebDocDetailsViewModel>;
+	}
 
 
 	if (ViewBag.WebInfo != null)
 	{
 		myinfo = ViewBag.WebInfo as MyInfoOnWebViewModel;
 	}
-	// if (ViewBag.Social != null)
-	// {
-	// 	socials = ViewBag.Social as List<WebSocial>;
+	if (ViewBag.Social != null)
+	{
+		socials = ViewBag.Social as List<WebSocial>;
 
-	// }
-	// if (ViewBag.Skills != null)
-	// {
-	// 	skills = ViewBag.Skills as List<WebSkills>;
-	// }
-	// if (ViewBag.Services != null)
-	// {
+	}
+	if (ViewBag.Skills != null)
+	{
+		skills = ViewBag.Skills as List<WebSkills>;
+	}
+	if (ViewBag.Services != null)
+	{
 
-	// 	services = ViewBag.Services as List<WebServices>;
-	// }
-//	GoogleRecapchaForViewViewModel tmp = ViewData["SiteKey"] as GoogleRecapchaForViewViewModel;
+		services = ViewBag.Services as List<WebServices>;
+	}
+	//	GoogleRecapchaForViewViewModel tmp = ViewData["SiteKey"] as GoogleRecapchaForViewViewModel;
 
 
 }
@@ -80,7 +81,7 @@
 		<div class="alx-logo"><a href="#page1"><img class="alx-logo__dark" src="/TemplateFile/images/logo.svg" alt="logo"><img class="alx-logo__white" src="~/templatefile/images/logo-white.svg" alt="logo"></a></div>
 		<div class="alx-right-wrap">
 			<div class="alx-social-links">
-				@* @if (socials.Count() > 0)
+				@if (socials.Count() > 0)
 				{
 					<ul>
 						@foreach (var item in socials)
@@ -90,7 +91,7 @@
 
 
 					</ul>
-				} *@
+				} 
 
 			</div><a class="alx-burger" href="#"><span></span></a>
 		</div>
@@ -162,7 +163,7 @@
 
 					<div class="col-lg-12">
 						<div class="alx-services alx-dots-style" data-interval="7000">
-							@* @if (services.Count() > 0)
+							@if (services.Count() > 0)
 							{
 
 								<div class="alx-services__container">
@@ -188,7 +189,7 @@
 
 
 								</div>
-							} *@
+							} 
 
 						</div>
 					</div>
@@ -215,7 +216,7 @@
 							</div> *@
 						</div>
 						<div class="alx-skills-list">
-							@* @if (skills.Count() > 0) 
+							@if (skills.Count() > 0) 
 							{
 
 								@foreach (var item in skills.Take(4))
@@ -231,12 +232,12 @@
 									</div>
 								}
 
-							}*@
+							}
 						</div>
 					</div>
 					<div class="col-lg-5 offset-lg-2 align-self-center">
 
-						@* @if (skills.Count() > 0)
+						@if (skills.Count() > 0)
 						{
 
 							@foreach (var item in skills.Skip(5).Take(5))
@@ -252,7 +253,7 @@
 								</div>
 							}
 
-						} *@
+						} 
 
 
 
@@ -333,7 +334,7 @@
 		<section class="alx-vertical-middle pp-scrollable alx-dark-section alx-bg-img" data-image="/TemplateFile/images/bgd3.jpg">
 			<div class="container">
 				<div class="col-lg-12">
-					@* @if (docTypes.Count() > 0)
+					@if (docTypes.Count() > 0)
 					{
 						<ul class="alx-portfolio-control alx-portfolio__nav alx-text-left">
 							@foreach (var item in docTypes)
@@ -349,14 +350,14 @@
 
 								}
 							}
-						</ul> *@
+						</ul> 
 					}
 
 
 
 				</div>
 				<div class="alx-portfolio-items alx-layout-isotope alx-isotope-gap" data-grid="4">
-					@* @foreach (var item in docD)
+					@foreach (var item in docD)
 					{
 						<div class="alx-isotope-item @item.Title_En">
 							<div class="alx-portfolio-item alx-portfolio-item__style1">
@@ -370,7 +371,7 @@
 								</div>
 							</div>
 						</div>
-					} *@
+					} 
 
 
 				</div>
@@ -393,7 +394,7 @@
 					</div>
 					<div class="alx-testimonials">
 						<div class="alx-testimonials__slides">
-						@* 	@foreach (var item in projects)
+							@foreach (var item in projects)
 							{
 
 								<div class="alx-testimonials__item">
@@ -414,7 +415,7 @@
 										<div class="alx-testimonials__item__text">@item.Description</div>
 									</div>
 								</div>
-							} *@
+							} 
 
 
 						</div>
@@ -448,11 +449,11 @@
 							</div>
 						</div>
 					</div>
-					@* @if (blogs.Count() > 0)
+					@if (blogs.Count() > 0)
 					{
 						<div class="alx-testimonials_my">
 							<div class="alx-testimonials__slides">
-								 @foreach (var item in blogs)
+								@foreach (var item in blogs)
 								{
 									<a href="@item.Url" target="_blank">
 										<div class="alx-testimonials__item_my">
@@ -461,9 +462,11 @@
 												<div class="alx-testimonials__item_my__review">
 												</div>
 												<div class="alx-testimonials__item_my__name">
-													@(item.Title.Length > 30
-													 item.Title.Substring(0, 25).TrimEnd() + "…"
-													: item.Title)
+													@(
+													item.Title.Length > 30
+													?item.Title.Substring(0, 25).TrimEnd() + "…"
+													: item.Title
+																			)
 
 												</div>
 												<div class="alx-testimonials__item_my__text" style="direction:rtl">
@@ -489,7 +492,7 @@
 								</div>
 							</div>
 						</div>
-					}*@ 
+					}
 
 				</div>
 			</div>

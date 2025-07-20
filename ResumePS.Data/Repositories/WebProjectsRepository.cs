@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ResumePS.Data.Context;
+using ResumePS.Domain.Interfaces;
 using ResumePS.Domain.Models.Web;
 
 namespace ResumePS.Data.Repositories
 {
-    public class WebProjectsRepository
+    public class WebProjectsRepository:IWebProjectsRepository
     {
         private readonly ResumePSContext context;
 

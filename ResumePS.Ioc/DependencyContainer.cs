@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using ResumePS.Core.Services.Implementations;
 using ResumePS.Core.Services.Interfaces;
 using ResumePS.Data.Repositories;
@@ -14,39 +8,42 @@ namespace ResumePS.Ioc
 {
     public static class DependencyContainer
     {
-        public static void  RegisterServices(this IServiceCollection service)
+        public static void  RegisterServices(this IServiceCollection services)
         {
 
-            service.AddScoped<IUserService, UserService>();
-            service.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
-            service.AddScoped<IWebMainInfoRepository, WebMainInfoRepository>();
-            service.AddScoped<IWebMainInfoService, WebMainInfoService>();
+            services.AddScoped<IWebMainInfoRepository, WebMainInfoRepository>();
+            services.AddScoped<IWebMainInfoService, WebMainInfoService>();
 
-            service.AddScoped<IWebSocialRepository, WebSocialRepository>();
-            service.AddScoped<IWebSocialService, WebSocialService>();
+            services.AddScoped<IWebSocialRepository, WebSocialRepository>();
+            services.AddScoped<IWebSocialService, WebSocialService>();
 
-            service.AddScoped<IWebSkillsRepository, WebSkillsRepository>();
-            service.AddScoped<IWebSkillsService, WebSkillsService>();
+            services.AddScoped<IWebSkillsRepository, WebSkillsRepository>();
+            services.AddScoped<IWebSkillsService, WebSkillsService>();
 
-            //service.AddScoped<IWebDocTypeRepository, WebDocTypeRepository>();
-            //service.AddScoped<IWebDocTypeService, WebDocTypeService>();
+            services.AddScoped<IWebDocTypeRepository, WebDocTypeRepository>();
+            services.AddScoped<IWebDocTypeService, WebDocTypeService>();
 
-            //service.AddScoped<IWebDocDetailsRepository, WebDocDetailsRepository>();
-            //service.AddScoped<IWebDocDetailsService, WebDocDetailsService>();
+            services.AddScoped<Domain.Interfaces.IWebDocDetailsRepository, WebDocDetailsRepository>();
+            services.AddScoped<IWebDocDetailsService, WebDocDetailsService>();
+           
+            //services.AddScoped<IWebDocDetailsRepository, WebDocDetailsRepository>();
+            //services.AddScoped<IWebDocDetailsService, WebDocDetailsService>();
 
 
-            service.AddScoped<IWebServicesRepository, WebServicesRepository>();
-            service.AddScoped<IWebServicesService, WebServicesService>();
+            services.AddScoped<IWebServicesRepository, WebServicesRepository>();
+            services.AddScoped<IWebServicesService, WebServicesService>();
 
-            //service.AddScoped<IWebProjectsRepository, WebProjectsRepository>();
-            //service.AddScoped<IWebProjectsService, WebProjectsService>();
+            services.AddScoped<IWebProjectsRepository, WebProjectsRepository>();
+            services.AddScoped<IWebProjectsService, WebProjectsService>();
 
-            service.AddScoped<IWebBlogsRepository, WebBlogsRepository>();
-            service.AddScoped<IWebBlogsService, WebBlogsService>();
+            services.AddScoped<IWebBlogsRepository, WebBlogsRepository>();
+            services.AddScoped<IWebBlogsService, WebBlogsService>();
 
-            service.AddScoped<IWebContactUsRepository, WebContactUsRepository>();
-            service.AddScoped<IWebContactUsService, WebContactUsService>();
+            services.AddScoped<IWebContactUsRepository, WebContactUsRepository>();
+            services.AddScoped<IWebContactUsService, WebContactUsService>();
 
         }
     }

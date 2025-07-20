@@ -28,7 +28,7 @@ builder.Services.RegisterServices();
 //builder.Services.AddScoped<IWebContactUsService, WebContactUsService>();
 //builder.Services.AddScoped<IWebContactUsRepository, WebContactUsRepository>();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
