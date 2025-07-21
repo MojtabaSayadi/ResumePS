@@ -26,7 +26,7 @@ namespace ResumePS.Ioc
             services.AddScoped<IWebDocTypeRepository, WebDocTypeRepository>();
             services.AddScoped<IWebDocTypeService, WebDocTypeService>();
 
-            services.AddScoped<Domain.Interfaces.IWebDocDetailsRepository, WebDocDetailsRepository>();
+            services.AddScoped<IWebDocDetailsRepository, WebDocDetailsRepository>();
             services.AddScoped<IWebDocDetailsService, WebDocDetailsService>();
            
             //services.AddScoped<IWebDocDetailsRepository, WebDocDetailsRepository>();

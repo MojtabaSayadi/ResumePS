@@ -9,6 +9,7 @@ using ResumePS.Models;
 using ResumePS.Domain.Models.Web;
 using ResumePS.Domain.ViewModels.WebDoc.ContactUs.Client;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using ResumePS.Domain.ViewModels.WebDoc.Client;
 
 
 namespace ResumePS.Controllers
@@ -19,21 +20,21 @@ namespace ResumePS.Controllers
         private IWebMainInfoService webMainInfoService;
         private IWebSkillsService webSkillsService;
         private IWebSocialService webSocialService;
-        //private IWebDocTypeService webDocTypeService;
-        //private IWebDocDetailsService webDocDetailsService;
-        //private IWebServicesService webServicesService;
-        //private IWebProjectsService webProjectsService;
-        //private IWebBlogsService webBlogsService;
+        private IWebDocTypeService webDocTypeService;
+        private IWebDocDetailsService webDocDetailsService;
+        private IWebServicesService webServicesService;
+        private IWebProjectsService webProjectsService;
+        private IWebBlogsService webBlogsService;
         private IWebContactUsService webContactUsService;
         //public IRecaptchaService recaptchaService { get; set; }
         public IConfiguration configuration;
 
        public HomeController(
-           //IWebDocDetailsService _webDocDetailsService, IWebDocTypeService _webDocTypeService,
-        //    IWebServicesService _webServicesService,IWebProjectsService _webProjectsService,
+           IWebDocDetailsService _webDocDetailsService, IWebDocTypeService _webDocTypeService,
+            IWebServicesService _webServicesService, IWebProjectsService _webProjectsService,
          IWebSkillsService _webSkillsService, IWebSocialService _webSocialService, 
         IWebMainInfoService _webMainInfoService,
-        //IWebBlogsService _webBlogsService,
+        IWebBlogsService _webBlogsService,
         ILogger<HomeController> logger,
         IWebContactUsService _webContactUsService,
         //IRecaptchaService _recaptchaService,
@@ -46,11 +47,11 @@ namespace ResumePS.Controllers
             webMainInfoService = _webMainInfoService;
             webSocialService = _webSocialService;
             webSkillsService = _webSkillsService;
-            //webDocTypeService = _webDocTypeService;
-            //webDocDetailsService = _webDocDetailsService;
-            //webServicesService = _webServicesService;
-            //webProjectsService = _webProjectsService;
-            //webBlogsService = _webBlogsService;
+            webDocTypeService = _webDocTypeService;
+            webDocDetailsService = _webDocDetailsService;
+            webServicesService = _webServicesService;
+            webProjectsService = _webProjectsService;
+            webBlogsService = _webBlogsService;
             webContactUsService = _webContactUsService;
             //recaptchaService = _recaptchaService;
             configuration = _configuration;
@@ -69,26 +70,26 @@ namespace ResumePS.Controllers
             MyInfoOnWebViewModel myinfo = webMainInfoService.GetWebInfoViewModel();
             ViewBag.WebInfo = myinfo;
 
-            //List<WebDocViewModel> list = webDocTypeService.GetAllWebDocTypeViewModel();
-            //ViewBag.WebDoc = list;
+            List<WebDocViewModel> list = webDocTypeService.GetAllWebDocTypeViewModel();
+            ViewBag.WebDoc = list;
 
 
 
             List<WebSocial> MySocial = webSocialService.GetWebSocials();
             ViewBag.Social = MySocial;
 
-            //List<WebServices> MyServices = webServicesService.GetWebServices();
-            //ViewBag.Services = MyServices;
+            List<WebServices> MyServices = webServicesService.GetWebServices();
+            ViewBag.Services = MyServices;
 
 
-            //List<WebBlogs> webBlogs = webBlogsService.GetWebBlogs();
-            //ViewBag.Blogs = webBlogs;
+            List<WebBlogs> webBlogs = webBlogsService.GetWebBlogs();
+            ViewBag.Blogs = webBlogs;
 
             List<WebSkills> MySkills = webSkillsService.GetWebSkills();
             ViewBag.Skills = MySkills;
 
-            //List<WebDocDetailsViewModel> docDetailsViewModels = webDocDetailsService.GetAllWebDocDetailsViewModel();
-            //ViewBag.DocD = docDetailsViewModels;
+            List<WebDocDetailsViewModel> docDetailsViewModels = webDocDetailsService.GetAllWebDocDetailsViewModel();
+            ViewBag.DocD = docDetailsViewModels;
             #region calculate of experience
             int startYear = 1996;
             int currentYear = DateTime.Now.Year;
@@ -96,8 +97,8 @@ namespace ResumePS.Controllers
             int yearsOfExperience = currentYear - startYear;
             ViewBag.exp_year = yearsOfExperience;
             #endregion
-            //List<WebProjects> MyProject = webProjectsService.GetWebProjects();
-            //ViewBag.MyProjects = MyProject;
+            List<WebProjects> MyProject = webProjectsService.GetWebProjects();
+            ViewBag.MyProjects = MyProject;
 
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ResumePS.Core.Services.Interfaces;
+using ResumePS.Domain.Interfaces;
 using ResumePS.Domain.Models.Web;
 using ResumePS.Domain.ViewModels.WebDoc.Client;
 
@@ -22,25 +23,25 @@ namespace ResumePS.Core.Services.Implementations
 
         public void AddWebDocDetails(WebDocDetails webDocDetails)
         {
-            webDocDetailsRepository.AddWebDocDetails(webDocDetails);//Add(webDocDetails);
+            webDocDetailsRepository.Add(webDocDetails);//Add(webDocDetails);
             SaveWebDocDetails();
         }
 
         public void DeleteWebDocDetails(int id)
         {
-            webDocDetailsRepository.DeleteWebDocDetails(GetWebDocDetailsById(id));
+            webDocDetailsRepository.Delete(GetWebDocDetailsById(id));
             SaveWebDocDetails();
         }
 
         public void DeleteWebDocDetails(WebDocDetails webDocDetails)
         {
-            webDocDetailsRepository.DeleteWebDocDetails(webDocDetails);
+            webDocDetailsRepository.Delete(webDocDetails);
             SaveWebDocDetails();
         }
 
         public List<WebDocDetailsViewModel> GetAllWebDocDetailsViewModel()
         {
-            List<WebDocDetails> webDocDetails = webDocDetailsRepository.GetWebDocDetails ();//kham
+            List<WebDocDetails> webDocDetails = webDocDetailsRepository.GetAll ();//kham
 
             List<WebDocDetailsViewModel> result = new List<WebDocDetailsViewModel>();
             WebDocDetailsViewModel tmp = new WebDocDetailsViewModel();
@@ -64,7 +65,7 @@ namespace ResumePS.Core.Services.Implementations
 
         public List<WebDocDetails> GetWebDocDetails()
         {
-            return webDocDetailsRepository.GetWebDocDetails();
+            return webDocDetailsRepository.GetAll();
         }
 
         public WebDocDetails GetWebDocDetailsById(int id)
